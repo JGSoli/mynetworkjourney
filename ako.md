@@ -1,6 +1,6 @@
 ## My Cisco Journey
 
-#### The command below will use python to configure a cisco access point
+#### The command below will use python to configure a cisco access point.
  ~~~
 import json
 import netmiko
