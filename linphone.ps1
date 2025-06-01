@@ -26,14 +26,14 @@
    name 1227
 !
   voice register pool 1
-    id mac 066a.76C2.247F
+    id mac __.__.__
     number 1 dn 1
     dtmf-relay sip-notify
     username 1228 password 1228
     codec g711ulaw
 !
   voice register pool 2
-    id mac 6466.d8c1.aa7d
+    id mac __.__.__
     number 1 dn 2
     dtmf-relay sip-notify
     username 1227 password 1227
