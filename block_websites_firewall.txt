@@ -1,0 +1,35 @@
+config t
+NO ip access-list standard BulakbolDay
+ip access-list standard BulakbolDay
+DENY   172.67.14.0     0.0.255.255
+DENY   50.6.160.0      0.0.255.255
+DENY   184.168.125.0   0.0.255.255
+DENY   155.137.92.0   0.0.255.255
+DENY   104.26.6.202   0.0.255.255
+Permit Any
+Int Gi 1
+ ip access-group BulakbolDay in
+end
+Allow Access: 
+Int Gi 1
+ no ip access-group BulakbolDay in
+end
+
+config t
+NO ip access-list standard NoTorrent
+ip access-list standard NoTorrent
+DENY   162.159.0.0     0.0.255.255
+DENY   172.67.0.0      0.0.255.255
+DENY   76.223.0.0   0.0.255.255
+DENY   104.21.90.0   0.0.255.255
+DENY   104.26.0.0   0.0.255.255
+DENY   84.32.84.155   0.0.255.255
+DENY   93.127.196.181   0.0.255.255
+Permit Any
+Int Gi 1
+ ip access-group NoTorrent in
+end
+Allow Access: 
+Int Gi 1
+ no ip access-group BulakbolDay in
+end
