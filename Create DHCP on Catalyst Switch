@@ -1,0 +1,12 @@
+**Exclude reserved/static addresses first**
+ip dhcp excluded-address 192.168.xx.xx 192.168.xx.xx
+ip dhcp excluded-address 192.168.xx.xx 192.168.xx.xx
+
+ip dhcp pool VLANxx-POOL
+ network 192.168.xx.xx 255.255.255.0
+ default-router 192.168.xx.xx
+ dns-server xx.xx.xx.xx lease 7
+
+interface Vlanxx
+ ip address 192.168.xx.xx 255.255.255.0
+ no shutdown
