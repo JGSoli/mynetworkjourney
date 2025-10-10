@@ -1,0 +1,26 @@
+**For Etherchannel**
+conf t
+ip default-gateway xxx.xxx.xxx.xxx
+vlan xx
+ name xx
+int po1
+ switchport trunk allowed Vlan add xx
+int Vlan xx
+ ip address xxx.xxx.xxx.xxx xxx.xxx.xxx.xxx
+ no shut 
+
+**For Single Interface**
+conf t
+ip default-gateway xxx.xxx.xxx.xxx
+vlan xx
+ name xx
+int gi1/0/48
+ switchport trunk allowed Vlan add xx
+int Vlan xx
+ ip address xxx.xxx.xxx.xxx xxx.xxx.xxx.xxx
+ no shut 
+
+conf t
+default interface Vlan 1
+int Vlan 1
+ shut
