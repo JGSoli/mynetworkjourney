@@ -1,0 +1,9 @@
+ip access-list <SNMP-ACL>
+ permit ip host <IP of SNMP> any
+ deny ip any any
+
+snmp-server community <community name> use-ipv4acl <SNMP-ACL>
+
+snmp-server host <IP of SNMP> version 2c <community name>
+
+snmp-server source-interface informs vlan xx
