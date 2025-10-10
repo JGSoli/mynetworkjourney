@@ -1,0 +1,38 @@
+**Create user**
+! Create custom group with read-only access
+snmp-server group MONITORING v3 priv read v1default
+
+! Create user in that group
+snmp-server user snmpmonitor MONITORING v3 auth sha cisco123 priv aes 128 cisco123
+
+configure terminal
+
+snmp-server contact email.com.ph
+snmp-server location **Area Name**
+
+snmp-server user snmpmonitor network-operator auth sha cisco123 priv aes-256 cisco123
+
+snmp-server host 192.168.xx.xx traps version 3 priv snmpmonitor
+
+
+snmp-server enable traps link
+snmp-server enable traps entity
+snmp-server enable traps config
+snmp-server enable traps snmp authentication
+snmp-server enable traps license
+snmp-server enable traps upgrade
+
+
+
+ip access-list SNMP-MGMT-ACL
+  10 permit ip xx.x.x.x any
+  20 deny ip any any log
+exit
+
+snmp-server user snmpmonitor network-operator auth sha cisco123 priv aes-256 cisco123 acl SNMP-MGMT-ACL
+
+snmp-server globalEnforcePriv
+
+copy running-config startup-config
+
+exit
