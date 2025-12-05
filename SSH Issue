@@ -1,0 +1,9 @@
+Fix this issue
+
+Key exchange failed. No compatible MAC. The server supports these MACs: hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com
+
+
+conf t
+ip ssh server algorithm mac hmac-sha2-256 hmac-sha2-512
+end
+wr
